@@ -61,6 +61,20 @@ class EpisodesController < ApplicationController
     end
   end
 
+  def random
+    episodes = Episode.all
+    rng = Random.new
+    # episodes[50] # returns the 51st episode
+    # rng.rand(100) # returns a random number from 0 to 100
+    random_episode_index = rng.rand(episodes.count) + 1
+    @random_episode = episodes[random_episode_index]
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @random_episode.to_json }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_episode

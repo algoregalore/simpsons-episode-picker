@@ -1,0 +1,7 @@
+<h1>Simpsons Random Episode Generator!</h1>
+
+<div class="episode-display">
+  <h2> Season <%= @random_episode.season %> Episode <%= @random_episode.episode_number %>: <%= @random_episode.name%></h2>
+
+<%= link_to 'generate another', random_episodes_path, class: 'btn btn-default' %>
+
