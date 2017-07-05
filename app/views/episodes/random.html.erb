@@ -1,7 +1,24 @@
-<h1>Simpsons Random Episode Generator!</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
 
-<div class="episode-display">
-  <h2> Season <%= @random_episode.season %> Episode <%= @random_episode.episode_number %>: <%= @random_episode.name%></h2>
+     <br><br><br><br><br>
 
-<%= link_to 'generate another', random_episodes_path, class: 'btn btn-default' %>
+        <div id="episode-display">
+          <h3>The Simpsons Random Episode Generator!</h3>
 
+            <h2> Season <%= @random_episode.season %> Episode <%= @random_episode.episode_number %>: <%= @random_episode.name%></h2>
+
+            <center><%= link_to 'Regenerate', random_episodes_path %></center>
+            <br>
+        </div>
+      </div>
+    </div>
+
+      <div class="row">
+        <div id="donut">
+          <%= image_tag "donut1.png" %>
+        </div>
+      </div>
+
+</div>
