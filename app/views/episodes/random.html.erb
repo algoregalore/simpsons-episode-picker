@@ -1,32 +1,56 @@
 <div class="wrap">
+
   <div class="jumbotron">
   </div>
-  <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
 
-          <div id="episode-display">
-            <h3>The Simpsons Random Episode Generator!</h3>
-            <h2>
-             Season <%= @random_episode.season %> Episode <%= @random_episode.episode_number %>: <%= @random_episode.name%>
-             </h2>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
 
-            <center>
-              <%= link_to 'Regenerate', random_episodes_path %>
-            </center><br>
+            <div id="episode-display">
+              <h3>The Simpsons Random Episode Generator!</h3>
+              <h2>
+               Season <%= @random_episode.season %> Episode <%= @random_episode.episode_number %>: <%= @random_episode.name%>
+               </h2>
+
+              <center>
+                <%= link_to 'Regenerate', random_episodes_path %>
+              </center><br>
+            </div>
+
           </div>
+        </div>
 
+      <div class="row">
+        <div id="donut">
+          <%= image_tag "donut1.png" %>
         </div>
       </div>
 
-    <div class="row">
-      <div id="donut">
-        <%= image_tag "donut1.png" %>
-      </div>
-    </div>
-
   </div> <!-- end container-->
 </div> <!-- end wrap-->
-<footer class="footer">
 
-</footer>
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" data-dismiss="modal">
+      <div class="modal-content"  >
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+             <img src="" class="imagepreview" style="width: 100%;" >
+        </div>
+     <div class="modal-footer">
+        <div class="col-xs-12">
+           <p class="text-left">blah blah blah</p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+    $('.pop').on('click', function() {
+        $('.imagepreview').attr('src', $(this).find('donut1.png').attr('src'));
+        $('#imagemodal').modal('show');
+    });
+});
+</script>
+
