@@ -1,5 +1,13 @@
 {
   "name": "simpsons_episode_picker",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:algoregalore/simpsons-episode-picker.git",
+  "author": "algoregalore <cemurray88@gmail.com>",
+  "license": "MIT"
 }
